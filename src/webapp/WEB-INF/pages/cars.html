@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CARS PAGE</title>
+</head>
+<body>
+<hr/>
+<div>
+    <table class="dataTable" border="1">
+
+        <th>Field</th>
+
+        <th:block th:each="car, iteration : ${cars}">
+            <th>Car <span th:utext="${iteration.index+1}"></span></th>
+        </th:block>
+        <hr/>
+        <tr>
+            <td>Model</td>
+            <th:block th:each="car, iteration : ${cars}">
+                <td th:utext="${car.getModel()}"></td>
+            </th:block>
+        </tr>
+
+        <tr>
+            <td>Color</td>
+            <th:block th:each="car, iteration : ${cars}">
+                <td th:utext="${car.getColor()}"></td>
+            </th:block>
+        </tr>
+
+        <tr>
+            <td>Number</td>
+            <th:block th:each="car, iteration : ${cars}">
+                <td th:utext="${car.getNumber()}"></td>
+            </th:block>
+        </tr>
+
+    </table>
+</div>
+<hr/>
+
+
+</body>
+</html>
